@@ -50,8 +50,12 @@ Once the distance of each individual path has been optimised, the next step is t
 The algorithm: 
 
 ```
-Two neighbouring paths are selected. The paths are divided into three sections each. The length of each section is chosen at random (this can also be zero - therefore only creating two sections). 
-A new path is then created by randomly selecting three of the six sections, and the other path is assigned the other three sections.
+Two neighbouring paths are selected.
+The paths are divided into three sections each. 
+The length of each section is chosen at random (this can also be zero - therefore only creating two sections). 
+A new path is then created by randomly selecting three of the six sections.
+The other path is created by combining the three remaining sections.
+```
 
 For example:
 If a path is composed of sections A, B and C, then there are 3 possible permutations of those sections: ABC, ACB, BAC (the mirrored versions - CBA, BCA, CAB are ignored).
