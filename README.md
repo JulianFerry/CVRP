@@ -47,11 +47,20 @@ Figure 2 shows that this creates a round-trip which has a very small total dista
 
 Once the distance of each individual path has been optimised, the next step is to combine paths together, to try to find the best set of paths with the lowest combined distance. This is done by selecting two neighbouring paths and combining sections of each path together to create a new path. The challenge of this algorithm is that combining random path sections can create a new path with a customer demand larger than the truck capacity. The algorithm addresses this by progressively removing a customer from the end of each section, until the demand of that path is smaller than the truck capacity.
 
-The algorithm: The two paths are divided into three sections each, with randomly assigned lengths (which can also be zero). A new path is created by randomly selecting three of the six sections, and the other path is assigned the other three sections.
+The algorithm: 
 
-If a path is composed of sections A, B and C then the possible permutations of those sections are: ABC, ACB, BAC (the mirrored versions - CBA, BCA, CAB are ignored). Each path section can also be inverted. E.g. if A = [1->2->3->1], Å = [1->3->2->1]. This gives a binary total of 23 = 8 versions (e.g. ÅBC) for each permutation. This gives a total of 3*8 = 24 different versions for each new path to evaluate. The algorithm keeps the new path with the lowest distance.
+```
+Two neighbouring paths are selected. The paths are divided into three sections each. The length of each section is chosen at random (this can also be zero - therefore only creating two sections). 
+A new path is then created by randomly selecting three of the six sections, and the other path is assigned the other three sections.
 
-The longer this iterates for, the better the results become.
+For example:
+If a path is composed of sections A, B and C, then there are 3 possible permutations of those sections: ABC, ACB, BAC (the mirrored versions - CBA, BCA, CAB are ignored).
+
+Each path section can also be inverted. For example, if A = [1->2->3->1], Å = [1->3->2->1]. This means that for each permutation (e.g. BAC) there are 2^3 = 8 versions (e.g. BÅC) of that permutation. 
+
+This gives a total of 3*8 = 24 different versions for that path. The algorithm keeps the new path with the lowest distance.
+
+The longer this iterates for, the better the results will become.
 
 <img src="https://github.com/JulianFerry/CVRP-/blob/master/images/exploratoryHillclimbing.png" width="400px">
 
