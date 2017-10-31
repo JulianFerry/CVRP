@@ -63,7 +63,6 @@ If a path is composed of sections A, B and C, then there are 3 possible permutat
 Each path section can also be inverted. For example, if A = [1->2->3->1], Å = [1->3->2->1]. This means that for each permutation (e.g. BAC) there are 2^3 = 8 versions (e.g. BÅC) of that permutation. 
 
 This gives a total of 3*8 = 24 different versions for that path. The algorithm keeps the new path with the lowest distance.
-```
 
 The longer this iterates for, the better the results will become.
 
