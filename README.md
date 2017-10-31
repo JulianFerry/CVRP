@@ -40,7 +40,7 @@ This is iterated a few hundred times, and only requires a few seconds to run.
 However, after this stage it already finds a path distance of around 6600.
 Figure 2 shows that this creates a round-trip which has a very small total distance - since the customers were previously limited to a small range of angles relative to the depot.
 
-<img src="https://github.com/JulianFerry/CVRP-/blob/master/images/localHillclimbing.png">
+<img src="https://github.com/JulianFerry/CVRP-/blob/master/images/localHillclimbing.png" width="720px">
 
 #### Exploratory Hillclimbing:
 
@@ -52,7 +52,7 @@ If a path is composed of sections A, B and C then the possible permutations of t
 
 The longer this iterates for, the better the results become.
 
-<img src="https://github.com/JulianFerry/CVRP-/blob/master/images/exploratoryHillclimbing.png" width="480px">
+<img src="https://github.com/JulianFerry/CVRP-/blob/master/images/exploratoryHillclimbing.png" width="400px">
 
 After iteration is done, the Local Hillclimbing algorithm is run again to minimise distance covered by each newly created path.
 
