@@ -1,12 +1,13 @@
 # CVRP
 
-The capacitated vehicle routing problem (CVRP) is an [NP-hard](https://en.wikipedia.org/wiki/NP-hardness) optimisation problem A depot has to deliver goods to its surrounding customers, using the shortest path possible.
+The capacitated vehicle routing problem (CVRP) is an [NP-hard](https://en.wikipedia.org/wiki/NP-hardness) optimisation problem. A depot has to deliver goods to its customers, using the shortest path possible.
 
 The depot and the customers are placed on a 2D map. Each customer has a demand of X goods. Each truck, however, has a limited capacity. Therefore the depot has to send multiple trucks to deliver its goods. The best solution is the one that minimises the combined distance covered by these trucks (further requirements could be added such as minimising the number of trucks).
 
 Using a stochastic approach is unlikely to find the optimal solution for this problem, since the search-space is very large. [Therefore an optimisation heuristic is required](https://en.wikipedia.org/wiki/Heuristic_(computer_science)).
 
-## My solution (unfinished):
+
+## My solution (in progress):
 
 To solve the CVRP, I used an algorithm which runs two different specialised Hillclimbing algorithms in series. Initial attempts included using a Genetic Algorithm, however the problem encountered by general Genetic Algorithms for this problem is that changing just one gene can change the whole solution (as well as the fact that it creates many invalid solutions, which wastes computational power).
 
@@ -55,6 +56,7 @@ The longer this iterates for, the better the results become.
 <img src="https://github.com/JulianFerry/CVRP-/blob/master/images/exploratoryHillclimbing.png" width="400px">
 
 After iteration is done, the Local Hillclimbing algorithm is run again to minimise distance covered by each newly created path.
+
 
 ## Possible improvements:
 
