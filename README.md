@@ -9,7 +9,7 @@ Using a stochastic approach is unlikely to find the optimal solution for this pr
 
 ## My solution (in progress):
 
-To solve the CVRP, I used an algorithm which runs two different specialised Hillclimbing algorithms in series. Initial attempts included using a Genetic Algorithm, however the problem encountered by general Genetic Algorithms for this problem is that changing just one gene can change the whole solution (as well as the fact that it creates many invalid solutions, which wastes computational power).
+To solve the CVRP, I used an algorithm which runs two different specialised Hillclimbing algorithms in series. Initial attempts included using a Genetic Algorithm, however the problem encountered by general Genetic Algorithms for this problem is that changing just one gene can change the whole solution (as well as the fact that it creates many invalid solutions - dealing with this is a whole problem of its own).
 
 By contrast, the Hillclimber can keep evaluating the validity and score of neighbouring solutions and can converge to a local optimum.
 The algorithm finds a very good local optimum, which the human eye could not improve. The advantage of this algorithm is that most local optimums in the CVRP have very similar scores, therefore it gives very consistent results. The drawback of this solution is that because there are so many possible permutations, rerunning the algorithm multiple times is very unlikely to find the CVRP’s global optimum.
